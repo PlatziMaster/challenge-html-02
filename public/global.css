@@ -6,6 +6,7 @@ html, body {
 
 body {
 	color: #333;
+	background-color: rgb(76, 202, 196);
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;

@@ -28,6 +28,22 @@
     transition-duration: 4s;
   }
 
+  figure:hover{
+    scale: 1.2;
+    transition-duration: 2s;
+  }
+
+  figure img:hover + figcaption{
+    color: rgb(20, 73, 116);
+    transition-duration: 4s;
+  }
+
+  h1{
+    grid-column: 1 / 6;
+    text-align: center;
+    color: rgb(20, 73, 116);
+  }
+
   /* .Loading {
     background-color: aqua;
     width: 100px;
@@ -54,6 +70,8 @@
     border-top: 20px solid #2c3687;
     box-shadow: 0px 0px 20px 20px #2c3687;
     animation: loader 3s linear infinite;
+    grid-column: 3;
+    margin-top: 300px;
   }
 
   @keyframes loader {
@@ -75,8 +93,8 @@
   }
 </style>
 
-<div class="Loading" />
 <div class="characters">
+  <h1>Rick And Morty</h1>
   {#each characters as character}
     <figure>
       <img src={character.image} alt={character.name} />
