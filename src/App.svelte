@@ -22,6 +22,28 @@
     margin: 0;
     filter: grayscale(100%);
   }
+
+  figure img:hover{
+    filter: grayscale(0%);
+    transition-duration: 4s;
+  }
+
+  figure:hover{
+    scale: 1.2;
+    transition-duration: 2s;
+  }
+
+  figure img:hover + figcaption{
+    color: rgb(20, 73, 116);
+    transition-duration: 4s;
+  }
+
+  h1{
+    grid-column: 1 / 6;
+    text-align: center;
+    color: rgb(20, 73, 116);
+  }
+
   /* .Loading {
     background-color: aqua;
     width: 100px;
@@ -42,25 +64,37 @@
   .Loading {
     width: 300px;
     height: 300px;
-    background-color: #e1f0fc;
+    background-color: #ffffff;
     border-radius: 50%;
     border: 20px solid #9cadd7;
     border-top: 20px solid #2c3687;
-    animation: loader 6s linear infinite;
+    box-shadow: 0px 0px 20px 20px #2c3687;
+    animation: loader 3s linear infinite;
+    grid-column: 3;
+    margin-top: 300px;
   }
 
   @keyframes loader {
     0% {
       transform: rotate(0deg);
+      border-top: 20px solid #2c3687;
+      box-shadow: 0px 0px 20px 20px #2c3687;
+    }
+    50%{
+      transform: rotate(360deg);
+      border-top: 20px solid #5a85c5;
+      box-shadow: 0px 0px 20px 20px #5a85c5;
     }
     100% {
-      transform: rotate(360deg);
+      transform: rotate(720deg);
+      border-top: 20px solid #2c3687;
+      box-shadow: 0px 0px 20px 20px #2c3687;
     }
   }
 </style>
 
-<div class="Loading" />
 <div class="characters">
+  <h1>Rick And Morty</h1>
   {#each characters as character}
     <figure>
       <img src={character.image} alt={character.name} />
