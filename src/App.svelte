@@ -21,6 +21,13 @@
     width: 100%;
     margin: 0;
     filter: grayscale(100%);
+    transform: scale (1) ;
+    transition: 1s;
+  }
+
+  figure img:hover {
+     filter: grayscale(0%);
+     transform: scale(1.2);    
   }
   /* .Loading {
     background-color: aqua;
@@ -38,6 +45,8 @@
       background-color: tomato;
     }
   } */
+
+
 
   .Loading {
     width: 300px;
@@ -59,7 +68,7 @@
   }
 </style>
 
-<div class="Loading" />
+<!-- <div class="Loading" /> -->
 <div class="characters">
   {#each characters as character}
     <figure>
