@@ -19,42 +19,41 @@
   }
   figure img {
     width: 100%;
-    margin: 0;
+    margin-top: 3px;
+    margin-left: 3px;
+    box-shadow: none;
     filter: grayscale(100%);
-  }
-  /* .Loading {
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
-    animation-name: coloranimate;
-    animation-duration: 10s;
+    transition: filter 4s;
   }
 
-  @keyframes coloranimate {
-    from {
-      background-color: aqua;
-    }
-    to {
-      background-color: tomato;
-    }
-  } */
+  img:hover {
+    margin-top: 0px;
+    margin-left: 0px;
+    box-shadow: 0px 4px 6px 2px #999;
+    filter: grayscale(0%);
+  }
 
   .Loading {
-    width: 300px;
-    height: 300px;
-    background-color: #e1f0fc;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #A8DADC;
     border-radius: 50%;
-    border: 20px solid #9cadd7;
-    border-top: 20px solid #2c3687;
-    animation: loader 6s linear infinite;
+    border: 10px solid #457B9D;
+    border-top: 20px solid #1D3557;
+    animation: loader 2s linear infinite;
+    animation-timing-function: ease-in-out;
   }
 
   @keyframes loader {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(-45deg);
+    }
+    20% {
+      transform: rotate(-45deg);
     }
     100% {
-      transform: rotate(360deg);
+      transform: rotate(315deg);
     }
   }
 </style>
