@@ -22,7 +22,27 @@
     margin: 0;
     filter: grayscale(100%);
   }
-  /* .Loading {
+  
+  figure img:hover {
+    animation: characterColor linear 4s 1;
+  }
+  
+  @keyframes characterColor {
+    0% {
+      filter: grayscale(100%);
+    }
+
+    1% {
+      filter: none;
+    }
+
+    100% {
+      filter: none;
+    }
+  }
+
+  /* 
+  .Loading {
     background-color: aqua;
     width: 100px;
     height: 100px;
@@ -37,7 +57,23 @@
     to {
       background-color: tomato;
     }
-  } */
+  }
+  */
+  
+  .loading {
+    position: fixed;
+    top: calc(50vh - 250px);
+    left: calc(50vw - 150px);
+    z-index: 1;
+  }
+  
+  .loading h1 {
+    text-align: center;
+    font-size: 400%;
+    font-family: sans-serif;
+    color: #2c3687;
+    text-shadow: 3px 2px black;
+  }
 
   .Loading {
     width: 300px;
@@ -46,20 +82,20 @@
     border-radius: 50%;
     border: 20px solid #9cadd7;
     border-top: 20px solid #2c3687;
-    animation: loader 6s linear infinite;
+    animation: loader 3s linear infinite;
   }
 
   @keyframes loader {
     0% {
       transform: rotate(0deg);
+      filter: hue-rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
+      filter: hue-rotate(360deg);
     }
   }
 </style>
-
-<div class="Loading" />
 <div class="characters">
   {#each characters as character}
     <figure>
@@ -67,6 +103,9 @@
       <figcaption>{character.name}</figcaption>
     </figure>
   {:else}
-    <div class="Loading" />
+  <div class="loading">
+    <div class="Loading"/>
+      <h1>Loading...</h1>
+  </div>
   {/each}
 </div>
