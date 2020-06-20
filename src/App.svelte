@@ -8,46 +8,55 @@
     data = await response.json();
     characters = data.results;
   });
+
+  window.onload = function (){
+    var contenedor = document.getElementById('content');
+
+    contenedor.style.visibility = 'hidden'
+    contenedor.style.opacity = '0'
+  }
 </script>
 
 <style>
+
+  .Loading {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #0C0F0A;
+    border: 20px solid snow;
+    border-top: 20px solid #00b0c8;
+    animation: loader 4s linear infinite;
+    box-shadow: 0 0 20px 3px #5cc95e;
+  }
+
   .characters {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 8px;
+    text-align: center;
   }
   figure img {
     width: 100%;
     margin: 0;
     filter: grayscale(100%);
-  }
-  /* .Loading {
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
-    animation-name: coloranimate;
-    animation-duration: 10s;
+    box-shadow: 0 0 10px 5px #00b0c8;
+    border-radius: 5%;
   }
 
-  @keyframes coloranimate {
-    from {
-      background-color: aqua;
-    }
-    to {
-      background-color: tomato;
-    }
-  } */
-
-  .Loading {
-    width: 300px;
-    height: 300px;
-    background-color: #e1f0fc;
-    border-radius: 50%;
-    border: 20px solid #9cadd7;
-    border-top: 20px solid #2c3687;
-    animation: loader 6s linear infinite;
+  figure img:hover {
+    filter: none;
+    transition: 4s;
   }
+
+
 
   @keyframes loader {
     0% {
@@ -59,7 +68,12 @@
   }
 </style>
 
-<div class="Loading" />
+  <div id="content">
+    <div class="Loading" />
+  </div>
+  	<div class="content-image">
+		  <img src="title-h1.png" alt="" id="image-title">
+	</div>
 <div class="characters">
   {#each characters as character}
     <figure>
@@ -70,3 +84,4 @@
     <div class="Loading" />
   {/each}
 </div>
+
