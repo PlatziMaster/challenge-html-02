@@ -22,7 +22,7 @@
     margin: 0;
     filter: grayscale(100%);
   }
-  /* .Loading {
+   .Loading {
     background-color: aqua;
     width: 100px;
     height: 100px;
@@ -32,12 +32,13 @@
 
   @keyframes coloranimate {
     from {
-      background-color: aqua;
+      filter:grayscale(100%);
     }
     to {
-      background-color: tomato;
+      filter:none;
+      
     }
-  } */
+  } 
 
   .Loading {
     width: 300px;
